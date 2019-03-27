@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import StarWars from './StarWars';
 
 
 class App extends Component {
@@ -11,13 +12,14 @@ class App extends Component {
   
   
   flipCoin(){
-  // let show = "head";
+    
    var max = 100;
    var min = 1;
    
-  var number =  Math.floor(Math.random() * (max - min + 1)) + min
-  console.log(number)
-  if(number%2===0){
+  var number1 =  Math.floor(Math.random() * (max - min + 1)) + min
+  console.log(number1)
+
+  if(number1%2===0){
     this.setState({show:'heads'}) 
   }
   else{
@@ -32,6 +34,7 @@ class App extends Component {
       <button type= 'reset' >
         Click me
       </button>
+      <StarWars/>
     </div>
     );
   } 
