@@ -3,11 +3,11 @@ import React,{Component} from 'react';
 
 class App extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {show:''};
-  //   this.flipCoin = this.flipCoin.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {show:''};
+    this.flipCoin = this.flipCoin.bind(this);
+  }
   
   
   flipCoin(){
@@ -18,17 +18,17 @@ class App extends Component {
   var number =  Math.floor(Math.random() * (max - min + 1)) + min
   console.log(number)
   if(number%2===0){
-    document.getElementById("headsOrTails").innerHTML = 'Heads'
+    this.setState({show:'heads'}) 
   }
   else{
-    document.getElementById("headsOrTails").innerHTML = 'Tails'
+    this.setState({show:'tails'})
   }
   
  }
  render() {
   return (
     <div onClick={this.flipCoin}>
-      <div id= "headsOrTails" > </div>
+      <div >{this.state.show} </div>
       <button type= 'reset' >
         Click me
       </button>
